@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Patrick Victoriano, an IT support and systems professional specialising in helpdesk, servers, networks, systems and automation."
+    />
+    <meta name="author" content="Patrick Victoriano" />
+    <title>Patrick Victoriano — IT Support &amp; Systems Professional</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/terminal-mode.css" />
+
+    <!-- Cloudflare Turnstile — anti-spam CAPTCHA for the contact form.
+         Formspree verifies the cf-turnstile-response token server-side. -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!-- Apply saved view/theme before first paint to avoid a flash -->
+    <script>
+      ;(function () {
+        if (localStorage.getItem("mode") === "terminal") {
+          document.documentElement.setAttribute("data-mode", "terminal")
+        }
+        // New viewers default to dark theme; returning viewers keep their choice.
+        var theme = localStorage.getItem("theme") || "dark"
+        document.documentElement.setAttribute("data-theme", theme)
+      })()
+    </script>
+  </head>
+  <body>
+    <!-- ===== Header / Navigation ===== -->
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary">
+        <a href="#hero" class="nav__logo">Patrick - IT Pro</a>
+        <div class="nav__actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
+            <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+          </button>
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Highlights</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Hero ===== -->
+      <section id="hero" class="hero">
+        <div class="container hero__inner">
+          <p class="status terminal-only" role="status">
+            <span class="status__dot" aria-hidden="true"></span>
+            <span class="status__pass">✓ Open to work</span>
+            <span class="status__sep">·</span> South Australia <span class="status__sep">·</span> IT Professional
+          </p>
+          <p class="hero__eyebrow">IT Support &amp; Systems Professional</p>
+          <h1 class="hero__title">Hi, I'm <span class="accent">Patrick Victoriano</span></h1>
+          <p class="hero__subtitle">
+            I keep systems reliable, teams productive and users happy. With 15+ years across helpdesk, servers, networks and systems,
+            I'm ITIL-aligned and lean on scripting and automation to cut manual effort and stop problems before they spread.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Get in touch</a>
+            <a href="assets/pvictoriano-resume-it.pdf" class="btn btn--ghost" target="_blank" rel="noopener">Download résumé</a>
+          </div>
+
+          <!-- System status readout (terminal mode only) -->
+          <p class="eyebrow terminal-only">$ uptime --since 2006</p>
+          <pre class="run terminal-only" aria-hidden="true"><span class="run__cmd">$ systemctl status patrick</span>
+<span class="run__ok">✓</span> helpdesk · servers · networks  <span class="run__dim">(15+ y)</span>
+<span class="run__ok">✓</span> itil · itsm · monitoring       <span class="run__dim">active</span>
+<span class="run__ok">✓</span> scripting · automation         <span class="run__dim">active</span>
+<span class="run__sum">3 active</span> · 0 failed · open to new roles</pre>
+        </div>
+      </section>
+
+      <!-- ===== About ===== -->
+      <section id="about" class="section">
+        <div class="container">
+          <p class="eyebrow terminal-only">$ cat about.md</p>
+          <h2 class="section__title">About Me</h2>
+          <div class="about">
+            <img class="about__photo" src="assets/patrick-star-superhero.png" alt="Portrait of Patrick Victoriano" />
+            <div class="about__text">
+              <p>
+                I'm an IT support and systems professional with 15+ years across helpdesk, servers, networks, and systems. I'm ITIL-aligned and
+                build the scripting and automation that cut manual effort and keep systems reliable.
+              </p>
+              <p>
+                My experience spans first-point-of-contact support under strict SLAs, server administration and virtualisation, network operations,
+                open-source monitoring stacks and team collaboration. Along the way I moved into QA, building test automation from the ground up — but
+                my foundation is keeping infrastructure and users running smoothly. I champion clear documentation, repeatable process, and
+                self-service knowledge bases that help teams resolve issues faster.
+              </p>
+              <ul class="about__facts">
+                <li><strong>Location:</strong> South Australia (AU Citizen)</li>
+                <li><strong>Experience:</strong> 15+ years in IT</li>
+                <li><strong>Email:</strong> <a href="mailto:pvictoriano@pm.me">pvictoriano@pm.me</a></li>
+                <li><strong>Availability:</strong> Open to opportunities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Skills ===== -->
+      <section id="skills" class="section section--alt">
+        <div class="container">
+          <p class="eyebrow terminal-only">$ ls skills/</p>
+          <h2 class="section__title">Skills &amp; Tools</h2>
+          <div class="skills">
+            <div class="skills__group">
+              <h3>Service Mgmt &amp; Ticketing</h3>
+              <ul class="tags">
+                <li>ITIL / ITSM</li>
+                <li>Incident</li>
+                <li>Problem</li>
+                <li>Change</li>
+                <li>Service Request</li>
+                <li>Helpdesk</li>
+                <li>ServiceNow</li>
+                <li>Jira</li>
+                <li>Zendesk</li>
+                <li>Confluence</li>
+                <li>GLPI</li>
+                <li>Salesforce</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Operating Systems</h3>
+              <ul class="tags">
+                <li>Windows Server</li>
+                <li>Windows Desktop</li>
+                <li>Linux</li>
+                <li>macOS</li>
+                <li>iOS</li>
+                <li>Android</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Directory &amp; Server Roles</h3>
+              <ul class="tags">
+                <li>Active Directory (AD)</li>
+                <li>Group Policy (GPO)</li>
+                <li>Exchange / Mail</li>
+                <li>IIS</li>
+                <li>Apache</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Networking &amp; Virtualisation</h3>
+              <ul class="tags">
+                <li>TCP/IP</li>
+                <li>LAN/WAN</li>
+                <li>VLAN</li>
+                <li>VPN</li>
+                <li>DNS</li>
+                <li>Wi-Fi</li>
+                <li>Firewall</li>
+                <li>VMware</li>
+                <li>Hyper-V</li>
+                <li>Citrix</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Monitoring</h3>
+              <ul class="tags">
+                <li>Splunk</li>
+                <li>SolarWinds</li>
+                <li>Nagios</li>
+                <li>Cacti</li>
+                <li>IPMonitor</li>
+                <li>AWStats</li>
+                <li>Lightsquid</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Scripting, Cloud &amp; AI</h3>
+              <ul class="tags">
+                <li>Bash</li>
+                <li>PowerShell</li>
+                <li>AutoIt</li>
+                <li>Node.js</li>
+                <li>Python</li>
+                <li>Git</li>
+                <li>Jenkins</li>
+                <li>AWS</li>
+                <li>Claude AI</li>
+                <li>GitHub Copilot</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Databases</h3>
+              <ul class="tags">
+                <li>MySQL</li>
+                <li>MS SQL</li>
+                <li>Oracle</li>
+                <li>SQLite</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Hardware &amp; Software</h3>
+              <ul class="tags">
+                <li>NAS</li>
+                <li>Switches</li>
+                <li>Routers</li>
+                <li>Modems</li>
+                <li>Printers</li>
+                <li>AV Devices</li>
+                <li>Microsoft 365</li>
+                <li>Antivirus</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Experience ===== -->
+      <section id="experience" class="section">
+        <div class="container">
+          <p class="eyebrow terminal-only">$ history | grep roles</p>
+          <h2 class="section__title">Experience</h2>
+          <ol class="timeline">
+            <li class="timeline__item">
+              <div class="timeline__meta">
+                <span class="timeline__date">Jul 2022 – Jun 2026</span>
+              </div>
+              <div class="timeline__content">
+                <h3>Quality Assurance Engineer — ICE Data Services Australia</h3>
+                <ul>
+                  <li>
+                    Automated repetitive manual testing on the essCert platform by building a Playwright/TypeScript framework from the ground up,
+                    running it across browsers and cutting manual effort by 50%.
+                  </li>
+                  <li>
+                    Migrated the entire automation framework from Playwright to Cypress when tooling direction changed mid-project, preserving full
+                    coverage while the platform was rebuilt on a modern React framework.
+                  </li>
+                  <li>
+                    Owned final sign-off for production releases, gating each deployment behind a standardised pre-release checklist and smoke tests
+                    via Jenkins/Git, delivering zero critical incidents across 12 releases.
+                  </li>
+                  <li>
+                    Onboarded 2 engineers with a structured one-month plan, Confluence knowledge-base articles, and pairing sessions, halving ramp-up
+                    time from 2 months to 1.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__meta">
+                <span class="timeline__date">Jun 2015 – Jul 2022</span>
+              </div>
+              <div class="timeline__content">
+                <h3>Customer Support Consultant — ICE Data Services Australia</h3>
+                <ul>
+                  <li>
+                    Documented and executed test plans, logged product defects in Jira, and led testing and troubleshooting for the SIMS go-live,
+                    coordinating fixes with developers and stabilising the system post-deployment.
+                  </li>
+                  <li>
+                    Served as first point of contact for all customer support under strict SLAs, reducing inbound volume by authoring customer-facing
+                    How-To guides in Zendesk that helped users self-resolve common issues.
+                  </li>
+                  <li>
+                    Migrated enterprise client systems onto the company's hosted Citrix platform and led eCertify/TridentGLOBAL version upgrades,
+                    generating recurring revenue while minimising client downtime.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__meta">
+                <span class="timeline__date">May 2012 – Oct 2014</span>
+              </div>
+              <div class="timeline__content">
+                <h3>Systems Analyst — GFT Global Markets Asia (Singapore)</h3>
+                <ul>
+                  <li>
+                    Automated routine server restarts, checkpoint validation, and Nagios host/service onboarding on the DealBook trading platform with
+                    custom Bash scripts, cutting manual configuration effort by 50% and reducing human error.
+                  </li>
+                  <li>
+                    Delivered L1–L2 incident and service-request support across 8 global offices (US, London, APAC), handling 20+ mission-critical
+                    trading inquiries daily and meeting tight SLAs from interruption through to restoration.
+                  </li>
+                  <li>
+                    Became the Singapore team's SSL-certificate SME, centralising GFT/GAIN certificate monitoring into Nagios and fixing reporting and
+                    verification issues, then documenting the process in Confluence for team self-service.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__meta">
+                <span class="timeline__date">Jul 2006 – Mar 2012</span>
+              </div>
+              <div class="timeline__content">
+                <h3>Network Engineer — Fujitsu Ten Solutions Philippines</h3>
+                <ul>
+                  <li>
+                    Built and maintained test environments and ran pre/post-deployment checks across multiple OS setups, isolating incompatibilities
+                    before rollout and verifying backups via test restorations to ensure near-100% availability.
+                  </li>
+                  <li>
+                    Owned network operations across the site, designing LAN layouts, configuring TCP/IP and VLANs, and maintaining structured cabling,
+                    while escalating leased-line faults to ISPs to keep connectivity reliable.
+                  </li>
+                  <li>
+                    Spearheaded open-source monitoring (Nagios, Cacti, AWStats, Mailgraph, Lightsquid) and scripted backups, antivirus updates, and
+                    alerting, replacing manual checks with proactive, self-reporting infrastructure.
+                  </li>
+                  <li>
+                    Reduced internal technical inquiries by 40% by authoring do-it-yourself troubleshooting guides for common issues and running
+                    targeted training sessions, curating the material in a shared knowledge base for staff and IT.
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== Projects ===== -->
+      <section id="projects" class="section section--alt">
+        <div class="container">
+          <p class="eyebrow terminal-only">$ ls highlights/</p>
+          <h2 class="section__title">Highlights</h2>
+          <div class="projects">
+            <article class="card">
+              <h3 class="card__title">Trading Platform Automation</h3>
+              <p class="card__desc">
+                Automated server restarts, checkpoint validation, and Nagios host/service onboarding on the DealBook trading platform with custom Bash
+                scripts, cutting manual configuration effort by 50% and reducing human error.
+              </p>
+              <ul class="tags tags--sm">
+                <li>Bash</li>
+                <li>Nagios</li>
+                <li>Automation</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card__title">Self-Service Knowledge Bases</h3>
+              <p class="card__desc">
+                Authored do-it-yourself troubleshooting guides and customer-facing How-To articles in Confluence and Zendesk, cutting internal
+                technical inquiries by 40% and reducing inbound support volume.
+              </p>
+              <ul class="tags tags--sm">
+                <li>Confluence</li>
+                <li>Zendesk</li>
+                <li>ITIL</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card__title">Portfolio Website</h3>
+              <p class="card__desc">
+                Designed and built this dependency-free portfolio with plain HTML, CSS, and JavaScript, hosted on GitHub Pages. Added a light and dark
+                theme and a toggleable, terminal-themed system mode.
+              </p>
+              <div class="card__links">
+                <a href="https://github.com/pvictoriano-gh/pvictoriano-gh.github.io" target="_blank" rel="noopener">View repository →</a>
+              </div>
+              <ul class="tags tags--sm">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Certifications ===== -->
+      <section id="certifications" class="section">
+        <div class="container">
+          <p class="eyebrow terminal-only">$ cat certs.txt</p>
+          <h2 class="section__title">Certifications</h2>
+          <ul class="certs">
+            <li class="certs__item">
+              <img class="certs__logo" src="assets/microsoft_logo.jpg" alt="Microsoft logo" />
+              <span class="certs__name">Microsoft Certified Professional</span>
+              <span class="certs__issuer">Microsoft</span>
+            </li>
+            <li class="certs__item">
+              <img class="certs__logo" src="assets/linux_logo.jpg" alt="Linux Professional Institute logo" />
+              <span class="certs__name">Linux Professional Institute Certification (LPIC-1)</span>
+              <span class="certs__issuer">Linux Professional Institute (LPI)</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Education ===== -->
+      <section id="education" class="section section--alt">
+        <div class="container">
+          <p class="eyebrow terminal-only">$ cat education.txt</p>
+          <h2 class="section__title">Education</h2>
+          <ul class="certs">
+            <li class="certs__item">
+              <img class="certs__logo" src="assets/school.jpg" alt="Polytechnic University of the Philippines logo" />
+              <div class="certs__text">
+                <span class="certs__name">Polytechnic University of the Philippines</span>
+                <span class="certs__sub">Bachelor of Science in Computer Engineering</span>
+              </div>
+              <span class="certs__issuer">May 2006</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Contact ===== -->
+      <section id="contact" class="section">
+        <div class="container contact">
+          <p class="eyebrow terminal-only">$ mail -s "hello"</p>
+          <h2 class="section__title">Get In Touch</h2>
+          <p class="contact__lead">Open to IT support, systems, and QA opportunities.<br />Send me a message below or reach me by email.</p>
+
+          <!--
+          Contact form powered by Formspree (free tier).
+          1. Sign up at https://formspree.io and create a new form.
+          2. Replace YOUR_FORM_ID below with the ID Formspree gives you.
+          Static GitHub Pages sites can't process forms server-side, so a
+          service like Formspree handles delivery to your inbox.
+        -->
+          <form id="contact-form" class="contact__form" action="https://formspree.io/f/xzdldlkl" method="POST">
+            <div class="form__row">
+              <label class="form__field">
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label class="form__field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+            <label class="form__field">
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+            </label>
+            <!-- Honeypot: Formspree drops any submission where this is filled.
+                 Hidden from real users via CSS; do not remove the _gotcha name. -->
+            <div class="form__honeypot" aria-hidden="true">
+              <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+            </div>
+            <!-- Submit button with the Cloudflare Turnstile widget to its right.
+                 Turnstile produces a cf-turnstile-response token that Formspree
+                 verifies server-side. -->
+            <div class="form__submit-row">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADsVRvM360_g7hv0" data-theme="auto"></div>
+              <button type="submit" class="btn btn--primary">Send message</button>
+            </div>
+          </form>
+          <p id="form-status" class="form__status" role="status" aria-live="polite" hidden></p>
+
+          <p class="contact__or">
+            or email me directly at
+            <a href="mailto:pvictoriano@pm.me">pvictoriano@pm.me</a>
+          </p>
+          <ul class="contact__links">
+            <li><a href="https://www.linkedin.com/in/pvictoriano">LinkedIn</a></li>
+            <li><a href="https://github.com/pvictoriano-gh">GitHub</a></li>
+            <li><a href="assets/pvictoriano-resume-it.pdf" target="_blank" rel="noopener">Résumé</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <button id="terminal-toggle" class="terminal-switch" type="button" aria-pressed="false">Turn on terminal mode</button>
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===== Scroll controls ===== -->
+    <div class="scroll-controls">
+      <button class="scroll-btn" id="scroll-top" type="button" aria-label="Scroll to top" title="Scroll to top">↑</button>
+      <button class="scroll-btn" id="scroll-bottom" type="button" aria-label="Scroll to bottom" title="Scroll to bottom">↓</button>
+    </div>
+
+    <script>
+      // Mobile nav toggle
+      const toggle = document.querySelector(".nav__toggle")
+      const menu = document.getElementById("nav-menu")
+      toggle.addEventListener("click", () => {
+        const open = menu.classList.toggle("nav__menu--open")
+        toggle.setAttribute("aria-expanded", String(open))
+      })
+      menu.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          menu.classList.remove("nav__menu--open")
+          toggle.setAttribute("aria-expanded", "false")
+        }
+      })
+
+      // Theme toggle with persistence
+      const themeToggle = document.getElementById("theme-toggle")
+      const icon = themeToggle.querySelector(".theme-toggle__icon")
+      const stored = localStorage.getItem("theme")
+      // New viewers default to dark theme; returning viewers keep their choice.
+      const initial = stored || "dark"
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme)
+        icon.textContent = theme === "light" ? "☀️" : "🌙"
+      }
+      applyTheme(initial)
+
+      themeToggle.addEventListener("click", () => {
+        const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light"
+        applyTheme(next)
+        localStorage.setItem("theme", next)
+      })
+
+      // Terminal mode — re-skins the whole page in a system/terminal style.
+      // The data-mode attribute is set pre-paint by the <head> script;
+      // here we just sync the button label and handle clicks.
+      const terminalToggle = document.getElementById("terminal-toggle")
+
+      function applyMode(mode) {
+        const isTerminal = mode === "terminal"
+        document.documentElement.setAttribute("data-mode", isTerminal ? "terminal" : "standard")
+        terminalToggle.setAttribute("aria-pressed", String(isTerminal))
+        terminalToggle.textContent = isTerminal ? "Turn off terminal mode" : "Turn on terminal mode"
+      }
+      applyMode(localStorage.getItem("mode"))
+
+      terminalToggle.addEventListener("click", () => {
+        const next = document.documentElement.getAttribute("data-mode") === "terminal" ? "standard" : "terminal"
+        applyMode(next)
+        localStorage.setItem("mode", next)
+        window.scrollTo({ top: 0, behavior: "instant" })
+      })
+
+      // Scroll controls — smooth scroll to the top / bottom of the page
+      document.getElementById("scroll-top").addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      })
+      document.getElementById("scroll-bottom").addEventListener("click", () => {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" })
+      })
+
+      // Contact form — submit via AJAX so the visitor stays on the page, then
+      // show an inline confirmation. Cloudflare Turnstile adds its token as a
+      // hidden cf-turnstile-response field, which FormData picks up and
+      // Formspree verifies server-side.
+      const contactForm = document.getElementById("contact-form")
+      const formStatus = document.getElementById("form-status")
+
+      function showStatus(message, ok) {
+        formStatus.textContent = message
+        formStatus.classList.toggle("form__status--error", !ok)
+        formStatus.hidden = false
+      }
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault()
+
+        // Require the captcha before submitting. Only enforced when the widget
+        // has loaded, so a blocked Turnstile script never traps real visitors.
+        if (window.turnstile && !window.turnstile.getResponse()) {
+          showStatus("Please complete the captcha.", false)
+          return
+        }
+
+        const button = contactForm.querySelector("button[type='submit']")
+        button.disabled = true
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: { Accept: "application/json" },
+          })
+
+          if (response.ok) {
+            showStatus("✓ Thanks! Your message has been sent.", true)
+            contactForm.reset()
+            // Dismiss the confirmation on the next click anywhere on the page.
+            document.addEventListener(
+              "click",
+              () => {
+                formStatus.hidden = true
+              },
+              { once: true },
+            )
+          } else {
+            const data = await response.json().catch(() => ({}))
+            // Formspree may return either an `errors` array (field-level) or a
+            // single `error` string (form-level, e.g. CAPTCHA/config issues).
+            let msg = data.errors ? data.errors.map((err) => err.message).join(", ") : data.error || "Something went wrong. Please try again."
+            // Normalise any Turnstile/captcha-worded server error to one message.
+            if (/turnstile|captcha/i.test(msg)) msg = "Please complete the captcha."
+            showStatus(msg, false)
+          }
+        } catch {
+          showStatus("Network error. Please try again, or email me directly.", false)
+        } finally {
+          button.disabled = false
+          // Reset Turnstile so the next submit gets a fresh token (tokens are
+          // single-use). No-op if the widget script hasn't loaded.
+          if (window.turnstile) window.turnstile.reset()
+        }
+      })
+    </script>
+  </body>
+</html>
